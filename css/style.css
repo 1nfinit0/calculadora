@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  text-decoration: none;
+  font-family: 'Roboto Mono', monospace;
+  color: #ffffff;
+}
+body {
+  background: rgb(149,44,90);
+  background: -moz-radial-gradient(circle, rgba(149,44,90,1) 0%, rgba(0,43,93,1) 85%, rgba(0,0,0,1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(149,44,90,1) 0%, rgba(0,43,93,1) 85%, rgba(0,0,0,1) 100%);
+  background: radial-gradient(circle, rgba(149,44,90,1) 0%, rgba(0,43,93,1) 85%, rgba(0,0,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#952c5a",endColorstr="#000000",GradientType=1);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+body .calculator {
+  width: 100%;
+  min-width: 300px;
+  max-width: 375px;
+  height: 550px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+}
+body .calculator .display {
+  width: 100%;
+  height: 100px;
+  background: #ffffff25;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 3rem;
+  color: #000;
+}
+body .calculator .keyboard {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+body .calculator .keyboard .row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+body .calculator .keyboard .row .key {
+  border: none;
+  width: 50px;
+  height: 50px;
+  background: #00000018;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: 400;
+  
+}
+body .calculator .keyboard .row .key:hover {
+  background: #00000030;
+}
