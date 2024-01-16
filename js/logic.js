@@ -6,27 +6,39 @@
 //DOMContentLoaded es un evento que se dispara cuando el documento html se ha cargado completamente, es decir, cuando el navegador ha terminado de construir el DOM
 
 //function es una palabra reservada de javascript que permite definir una función
+let buffer = [0];
 
 document.addEventListener('DOMContentLoaded', function () {
   //Creando el buffer principal, que contendrá las primera entrada de la calculadora
-  let buffer = [0];
   displayR = document.getElementsByClassName('display__resultado')[0];
-  numbers = document.getElementsByClassName('number')
+  numbers = document.getElementsByClassName('number');
+  del = document.querySelectorAll('.delete')[0];
+  clean = document.querySelectorAll('.clean')[0];
   
   Array.from(numbers).forEach(function (element) {
     element.addEventListener('click', function () {
       const valor = element.textContent;
       buffer.push(valor);
-      displayR.innerHTML = parseInt(buffer.join(''));
+      bufferValor = parseInt(buffer.join(''));
+      if (buffer.length > 0) {
+        displayR.innerHTML = bufferValor;
+      }
     });
   });
-    
 
-  // //recorriendo la constante keys con un ciclo for
-  // number.forEach(function (element) {
-  //   element.addEventListener('click', function () {
-      
+  del.addEventListener('click', function () {
+    buffer.pop();
+    bufferValor = parseInt(buffer.join(''));
+    if (buffer.length === 1) {
+      displayR.innerHTML = '';
+    } else {
+      displayR.innerHTML = bufferValor;
+    }
+  });
 
-  //   });
-  // })
+  clean.addEventListener('click', function () {
+    buffer = [0];
+    displayR.innerHTML = '';
+  });
+  
 });
